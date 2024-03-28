@@ -1,0 +1,1110 @@
+1-Faça um programa que receba quatro notas de um aluno, calcule e mostre a média aritmética das notas e a
+mensagem de aprovado ou reprovado, considerando para aprovação média 7
+
+ #include <stdio.h>
+
+int main() {  
+           
+    float nota1, nota2, nota3, nota4, media;
+     printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+    printf("Digite a terceira nota: ");
+    scanf("%f", &nota3);
+    printf("Digite a quarta nota: ");
+    scanf("%f", &nota4);
+
+
+    media = (nota1 + nota2 + nota3 + nota4) / 4.0;
+
+
+    if (media >= 7.0) {
+        printf("Media: %.2f\n", media);
+        printf("Aprovado\n");
+    } else {
+        printf("Media: %.2f\n", media);
+        printf("Reprovado\n");
+    }
+
+    return 0;
+}
+
+
+ 2-Faça um programa que receba duas notas, calcule e mostre a média aritmética e a mensagem que se encontra
+na tabela a seguir:
+
+ #include <stdio.h>
+
+int main() {
+    float nota1, nota2, media;
+
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+
+    media = (nota1 + nota2) / 2.0;
+
+    printf("A média das notas é: %.2f\n", media);
+
+    if (media >= 9.0) {
+        printf("Conceito: A\n");
+        printf("Aprovado\n");
+    } else if (media >= 7.5) {
+        printf("Conceito: B\n");
+        printf("Aprovado\n");
+    } else if (media >= 6.0) {
+        printf("Conceito: C\n");
+        printf("Aprovado\n");
+    } else if (media >= 4.0) {
+        printf("Conceito: D\n");
+        printf("Reprovado\n");
+    } else {
+        printf("Conceito: E\n");
+        printf("Reprovado\n");
+    }
+
+    return 0;
+}
+
+
+ 3-Faça um programa que receba dois números e mostre o menor.
+
+ #include <stdio.h>
+
+int main() {
+    float num1, num2;
+
+    printf("Digite o primeiro número: ");
+    scanf("%f", &num1);
+    printf("Digite o segundo número: ");
+    scanf("%f", &num2);
+
+    if (num1 < num2) {
+        printf("O menor número é: %.2f\n", num1);
+    } else if (num2 < num1) {
+        printf("O menor número é: %.2f\n", num2);
+    } else {
+        printf("Os números são iguais.\n");
+    }
+
+    return 0;
+}
+
+4-Faça um programa que receba três números e mostre o maior.
+
+#include <stdio.h>
+
+int main() {
+    float num1, num2, num3, maior;
+
+
+    printf("Digite o primeiro número: ");
+    scanf("%f", &num1);
+    printf("Digite o segundo número: ");
+    scanf("%f", &num2);
+    printf("Digite o terceiro número: ");
+    scanf("%f", &num3);
+
+
+    maior = num1;
+
+    if (num2 > maior) {
+        maior = num2;
+    }
+
+    if (num3 > maior) {
+        maior = num3;
+    }
+
+
+    printf("O maior número é: %.2f\n", maior);
+
+    return 0;
+}
+
+
+
+5- Faça um programa que receba dois números e execute as operações listadas a seguir, de acordo com a escolha
+do usuário.  EsCoLhA do usuári o oPErAção
+1 Média entre os números digitados
+2 Diferença do maior pelo menor
+3 Produto entre os números digitados
+4 Divisão do primeiro pelo segundo    Se a opção digitada for inválida, mostre uma mensagem de erro e termine a execução do programa.
+Lembre-se de que, na operação 4, o segundo número deve ser diferente de zero.
+
+#include <stdio.h>
+
+int main() {
+    float num1, num2, resultado;
+    int opcao;
+
+    printf("Digite o primeiro número: ");
+    scanf("%f", &num1);
+    printf("Digite o segundo número: ");
+    scanf("%f", &num2);
+
+    printf("Escolha a operação:\n");
+    printf("1 - Média entre os números digitados\n");
+    printf("2 - Diferença do maior pelo menor\n");
+    printf("3 - Produto entre os números digitados\n");
+    printf("4 - Divisão do primeiro pelo segundo\n");
+    scanf("%d", &opcao);
+
+    switch (opcao) {
+        case 1:
+            resultado = (num1 + num2) / 2;
+            printf("A média entre os números é: %.2f\n", resultado);
+            break;
+        case 2:
+            resultado = (num1 > num2) ? (num1 - num2) : (num2 - num1);
+            printf("A diferença entre o maior e o menor número é: %.2f\n", resultado);
+            break;
+        case 3:
+            resultado = num1 * num2;
+            printf("O produto entre os números é: %.2f\n", resultado);
+            break;
+        case 4:
+            if (num2 != 0) {
+                resultado = num1 / num2;
+                printf("A divisão do primeiro pelo segundo é: %.2f\n", resultado);
+            } else {
+                printf("Erro: Divisão por zero não é permitida.\n");
+                return 1; 
+            }
+            break;
+        default:
+            printf("Opção inválida. Por favor, escolha uma opção válida.\n");
+            return 1; 
+    }
+
+    return 0;
+}
+
+ 6- Faça um programa que receba dois números e execute uma das operações listadas a seguir, de acordo com a
+escolha do usuário. Se for digitada uma opção inválida, mostre mensagem de erro e termine a execução do
+programa. As opções são:
+a) O primeiro número elevado ao segundo número.
+b) Raiz quadrada de cada um dos números.
+c) Raiz cúbica de cada um dos números.
+
+#include <stdio.h>
+
+int main() {
+    float num1, num2, resultado;
+    char opcao;
+
+    printf("Digite o primeiro número: ");
+    scanf("%f", &num1);
+    printf("Digite o segundo número: ");
+    scanf("%f", &num2);
+
+
+    printf("Escolha a operação:\n");
+    printf("a) O primeiro número elevado ao segundo número\n");
+    printf("b) Raiz quadrada de cada um dos números\n");
+    printf("c) Raiz cúbica de cada um dos números\n");
+    scanf(" %c", &opcao);
+
+    switch (opcao) {
+        case 'a':
+            resultado = pow(num1, num2);
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case 'b':
+            printf("Raiz quadrada de %.2f: %.2f\n", num1, sqrt(num1));
+            printf("Raiz quadrada de %.2f: %.2f\n", num2, sqrt(num2));
+            break;
+        case 'c':
+            printf("Raiz cúbica de %.2f: %.2f\n", num1, cbrt(num1));
+            printf("Raiz cúbica de %.2f: %.2f\n", num2, cbrt(num2));
+            break;
+        default:
+            printf("Opção inválida. Por favor, escolha uma opção válida (a, b ou c).\n");
+            return 1; 
+    }
+
+    return 0;
+}
+
+7- Uma empresa decide dar um aumento de 30% aos funcionários com salários inferiores a R$ 500,00. Faça um
+programa que receba o salário do funcionário e mostre o valor do salário reajustado ou uma mensagem, caso
+ele não tenha direito ao aumento.
+
+#include <stdio.h>
+
+int main() {
+    float salario, salario_reajustado;
+
+
+    printf("Digite o salário do funcionário: R$");
+    scanf("%f", &salario);
+
+
+    if (salario < 500.0) {
+
+        salario_reajustado = salario * 1.30;
+        printf("O novo salário com o aumento de 30%% é: R$%.2f\n", salario_reajustado);
+    } else {
+        printf("O funcionário não tem direito ao aumento.\n");
+    }
+
+    return 0;
+}
+
+ 8- Faça um programa para calcular e mostrar o salário reajustado de um funcionário. O percentual de aumento
+encontra-se na tabela a seguir.
+
+sALário PErCENTuAL dE AuMENTo
+Até R$ 300,00 35%
+Acima de R$ 300,00 15%
+
+
+ #include <stdio.h>
+
+int main() {
+    float salario, salario_reajustado;
+    
+    printf("Digite o salário do funcionário: R$");
+    scanf("%f", &salario);
+    
+    if (salario <= 300.0) {
+        salario_reajustado = salario * 1.35; // 35% de aumento
+    } else {
+        salario_reajustado = salario * 1.15; // 15% de aumento
+    }
+
+    printf("O salário reajustado é: R$%.2f\n", salario_reajustado);
+
+    return 0;
+}
+
+
+9- Um banco concederá um crédito especial aos seus clientes, de acordo com o saldo médio no último ano. Faça
+um programa que receba o saldo médio de um cliente e calcule o valor do crédito, de acordo com a tabela a
+seguir. Mostre o saldo médio e o valor do crédito.     sALdo Médio PErCENTuAL
+Acima de R$ 400,00 30% do saldo médio
+R$ 400,00 R$ 300,00 25% do saldo médio
+R$ 300,00 R$ 200,00 20% do saldo médio
+Até R$ 200,00 10% do saldo médio
+
+
+#include <stdio.h>
+
+int main() {
+    float saldo_medio, credito;
+
+    printf("Digite o saldo médio do cliente: R$");
+    scanf("%f", &saldo_medio);
+
+    if (saldo_medio > 400.0) {
+        credito = saldo_medio * 0.30; // 30% do saldo médio
+    } else if (saldo_medio >= 300.0) {
+        credito = saldo_medio * 0.25; // 25% do saldo médio
+    } else if (saldo_medio >= 200.0) {
+        credito = saldo_medio * 0.20; // 20% do saldo médio
+    } else {
+        credito = saldo_medio * 0.10; // 10% do saldo médio
+    }
+
+    printf("O saldo médio do cliente é: R$%.2f\n", saldo_medio);
+    printf("O valor do crédito é: R$%.2f\n", credito);
+
+    return 0;
+}
+
+
+
+10- O preço ao consumidor de um carro novo é a soma do custo de fábrica com a porcentagem do distri-
+buidor e dos impostos, ambos aplicados ao custo de fábrica. As porcentagens encontram-se na tabela a
+
+seguir. Faça um programa que receba o custo de fábrica de um carro e mostre o preço ao consumidor.
+
+CusTo dE FáBriCA % do dis Tri Buidor % dos iMPosTos
+Até R$ 12.000,00 5 isento
+Entre R$ 12.000,00 e R$ 25.000,00 10 15
+Acima de R$ 25.000,00 15 20
+
+
+#include <stdio.h>
+
+int main() {
+    float custo_fabrica, preco_consumidor;
+    int porcentagem_distribuidor, porcentagem_impostos;
+
+    printf("Digite o custo de fábrica do carro: R$");
+    scanf("%f", &custo_fabrica);
+
+    if (custo_fabrica <= 12000.0) {
+        porcentagem_distribuidor = 5;
+        porcentagem_impostos = 0;
+    } else if (custo_fabrica <= 25000.0) {
+        porcentagem_distribuidor = 10;
+        porcentagem_impostos = 15;
+    } else {
+        porcentagem_distribuidor = 15;
+        porcentagem_impostos = 20;
+    }
+
+    preco_consumidor = custo_fabrica + (custo_fabrica * porcentagem_distribuidor / 100) + (custo_fabrica * porcentagem_impostos / 100);
+
+    printf("O preço ao consumidor é: R$%.2f\n", preco_consumidor);
+
+    return 0;
+}
+
+
+11- Faça um programa que receba o salário atual de um funcionário e, usando a tabela a seguir, calcule e
+mostre o valor do aumento e o novo salário.
+
+SALÁRIO PErCENTuAL DE AUMENTO
+Até R$ 300,00 15%
+R$ 300,00 R$ 600,00 10%
+R$ 600,00 R$ 900,00 5%
+Acima de R$ 900,00 0%
+
+
+ #include <stdio.h>
+
+int main() {
+    float salario_atual, novo_salario;
+    float percentual_aumento;
+
+    printf("Digite o valor atual do salário do funcionário: R$");
+    scanf("%f", &salario_atual);
+
+
+    if (salario_atual <= 300.0) {
+        percentual_aumento = 15;
+    } else if (salario_atual <= 600.0) {
+        percentual_aumento = 10;
+    } else if (salario_atual <= 900.0) {
+        percentual_aumento = 5;
+    } else {
+        percentual_aumento = 0;
+    }
+
+    novo_salario = salario_atual + (salario_atual * percentual_aumento / 100);
+
+
+    printf("O valor do aumento é: R$%.2f\n", salario_atual * percentual_aumento / 100);
+    printf("O novo salário é: R$%.2f\n", novo_salario);
+
+    return 0;
+}
+
+
+
+
+ 12- Faça um programa que receba o salário bruto de um funcionário e, usando a tabela a seguir, calcule e
+
+mostre o valor a receber. Sabe-se que este é composto pelo salário bruto acrescido de gratificação e des-
+contado o imposto de 7% sobre o salário.
+
+TABELA dAs grATiFiCAçõEs
+SALÁRIO GRATIFICAÇÃO
+Até R$ 350,00 R$ 100,00
+R$ 350,00 R$ 600,00 R$ 75,00
+R$ 600,00 R$ 900,00 R$ 50,00
+Acima de R$ 900,00 R$ 35,00
+
+
+ #include <stdio.h>
+
+int main() {
+    float salario_bruto, salario_final, imposto, gratificacao;
+
+
+    printf("Digite o valor do salário bruto do funcionário: R$");
+    scanf("%f", &salario_bruto);
+
+
+    imposto = salario_bruto * 0.07;
+
+
+    if (salario_bruto <= 350.0) {
+        gratificacao = 100.0;
+    } else if (salario_bruto <= 600.0) {
+        gratificacao = 75.0;
+    } else if (salario_bruto <= 900.0) {
+        gratificacao = 50.0;
+    } else {
+        gratificacao = 35.0;
+    }
+
+
+    salario_final = salario_bruto + gratificacao - imposto;
+
+
+    printf("O valor a receber é: R$%.2f\n", salario_final);
+
+    return 0;
+}
+
+
+
+13- Faça um programa que receba o preço de um produto, calcule e mostre, de acordo com as tabelas a se-
+guir, o novo preço e a 
+classificação.
+
+TABELA 1 — PErCENTuAL dE AuMENTo
+PrEço %
+Até R$ 50,00 5
+Entre R$ 50,00 e R$ 100,00 10
+Acima de R$ 100,00 15
+TABELA 2 — CLAssiFiCAçõEs
+NoVo PrEço CLAssiFiCAção
+Até R$ 80,00 Barato
+Entre R$ 80,00 e R$ 120,00 (inclusive) Normal
+Entre R$ 120,00 e R$ 200,00 (inclusive) Caro
+Maior que R$ 200,00 Muito caro
+
+ #include <stdio.h>
+
+int main() {
+    float preco_produto, novo_preco;
+    int percentual_aumento;
+    char classificacao[20];
+
+
+    printf("Digite o preço do produto: R$");
+    scanf("%f", &preco_produto);
+
+
+    if (preco_produto <= 50.0) {
+        percentual_aumento = 5;
+    } else if (preco_produto <= 100.0) {
+        percentual_aumento = 10;
+    } else {
+        percentual_aumento = 15;
+    }
+
+
+    novo_preco = preco_produto + (preco_produto * percentual_aumento / 100);
+
+
+    if (novo_preco <= 80.0) {
+        strcpy(classificacao, "Barato");
+    } else if (novo_preco <= 120.0) {
+        strcpy(classificacao, "Normal");
+    } else if (novo_preco <= 200.0) {
+        strcpy(classificacao, "Caro");
+    } else {
+        strcpy(classificacao, "Está muito caro");
+    }
+
+
+    printf("O novo preço é: R$%.2f\n", novo_preco);
+    printf("Classificação: %s\n", classificacao);
+
+    return 0;
+}
+
+
+
+ 14. Faça um programa que receba o salário de um funcionário e, usando a tabela a seguir, calcule e mostre
+o novo salário.
+
+FAixA sALAriAL % dE AuMENTo
+Até R$ 300,00 50%
+R$ 300,00 R$ 500,00 40%
+R$ 500,00 R$ 700,00 30%
+R$ 700,00 R$ 800,00 20%
+R$ 800,00 R$ 1.000,00 10%
+Acima de R$ 1.000,00 5%
+
+
+
+ #include <stdio.h>
+
+int main() {
+    float salario_atual, novo_salario;
+
+
+    printf("Digite o salário atual do funcionário: R$");
+    scanf("%f", &salario_atual);
+
+
+    if (salario_atual <= 300.0) {
+        novo_salario = salario_atual * 1.50; 
+    } else if (salario_atual <= 500.0) {
+        novo_salario = salario_atual * 1.40; 
+    } else if (salario_atual <= 700.0) {
+        novo_salario = salario_atual * 1.30; 
+    } else if (salario_atual <= 800.0) {
+        novo_salario = salario_atual * 1.20;  
+    } else if (salario_atual <= 1000.0) {
+        novo_salario = salario_atual * 1.10; 
+    } else {
+        novo_salario = salario_atual * 1.05; 
+    }
+
+    printf("O novo salário é: R$%.2f\n", novo_salario);
+
+    return 0;
+}
+
+
+ 15- Uma agência bancária possui dois tipos de investimentos, conforme o quadro a seguir. Faça um pro-
+grama que receba o tipo de investimento e seu valor, calcule e mostre o valor corrigido após um mês de
+
+investimento, de acordo com o tipo de investimento.
+
+TiPo dEsCri ção rENdiMENTo MENsAL
+1 Poupança 3%
+
+
+ #include <stdio.h>
+
+int main() {
+    int tipo_investimento;
+    float valor_investimento, valor_corrigido;
+
+
+    printf("Digite o tipo de investimento (1 para Poupança, 2 para Fundos de renda fixa): ");
+    scanf("%d", &tipo_investimento);
+
+
+    printf("Digite o valor do investimento: R$");
+    scanf("%f", &valor_investimento);
+
+
+    switch (tipo_investimento) {
+        case 1:
+
+            valor_corrigido = valor_investimento * 1.03;
+            break;
+        case 2:
+          
+            valor_corrigido = valor_investimento * 1.04;
+            break;
+        default:
+            printf("Tipo de investimento inválido.\n");
+            return 1; // Encerra o programa com erro
+    }
+
+    printf("O valor corrigido depois de um mês de investimento é: R$%.2f\n", valor_corrigido);
+
+    return 0;
+}
+
+
+16- Uma empresa decide aplicar descontos nos seus preços usando a tabela a seguir. Faça um programa que
+receba o preço atual de um produto e seu código, calcule e mostre o valor do desconto e o novo preço.
+
+PrEço ATuAL % dE dEsCoNTo
+Até R$ 30,00 Sem desconto
+Entre R$ 30,00 e R$ 100,00 10%
+Acima de R$ 100,00 15%
+
+
+ #include <stdio.h>
+
+int main() {
+    float preco_atual, novo_preco, desconto = 0.0;
+    int codigo_produto;
+
+
+    printf("Digite o código do produto: ");
+    scanf("%d", &codigo_produto);
+
+
+    printf("Digite o preço atual do produto: R$");
+    scanf("%f", &preco_atual);
+
+
+    if (preco_atual > 30 && preco_atual <= 100) {
+        desconto = 0.10; // 10% de desconto
+    } else if (preco_atual > 100) {
+        desconto = 0.15; // 15% de desconto
+    }
+
+
+    novo_preco = preco_atual - (preco_atual * desconto);
+
+
+    printf("O valor do desconto é: R$%.2f\n", preco_atual * desconto);
+    printf("O novo preço é: R$%.2f\n", novo_preco);
+
+    return 0;
+}
+
+
+
+ 17- Faça um programa que verifique a validade de uma senha fornecida pelo usuário. A senha é 4531. O
+programa deve mostrar uma mensagem de permissão de acesso ou 
+
+
+
+ #include <stdio.h>
+
+int main() {
+    int senha;
+
+
+    printf("Digite a senha: ");
+    scanf("%d", &senha);
+
+
+    if (senha == 4531) {
+        printf("Permissão de acesso concedida.\n");
+    } else {
+        printf("Senha incorreta. Acesso negado.\n");
+    }
+
+    return 0;
+}
+
+
+
+ 18- Faça um programa que receba a idade de uma pessoa e mostre a mensagem de maioridade ou não.
+
+
+ #include <stdio.h>
+
+int main() {
+    int idade;
+
+
+    printf("Digite a idade da pessoa: ");
+    scanf("%d", &idade);
+
+
+    if (idade >= 18) {
+        printf("Você já é maior de idade!\n");
+    } else {
+        printf("Menor de idade.\n");
+    }
+
+    return 0;
+}
+
+
+ 19- Faça um programa que receba a altura e o sexo de uma pessoa e calcule e mostre seu peso ideal, utilizan-
+do as seguintes fórmulas (onde h é a altura):
+
+■■ para homens: (72.7 * h) – 58.
+■■ para mulheres: (62.1 * h) – 44.7.
+
+
+ #include <stdio.h>
+
+int main() {
+    float altura, peso_ideal;
+    char sexo;
+
+
+    printf("Digite a altura da pessoa (em metros): ");
+    scanf("%f", &altura);
+
+
+    printf("Digite o sexo da pessoa (M para masculino, F para feminino): ");
+    scanf(" %c", &sexo);
+
+
+    if (sexo == 'M' || sexo == 'm') {
+        peso_ideal = (72.7 * altura) - 58;
+        printf("O peso ideal para um homem de %.2f metros de altura é: %.2f kg\n", altura, peso_ideal);
+    } else if (sexo == 'F' || sexo == 'f') {
+        peso_ideal = (62.1 * altura) - 44.7;
+        printf("O peso ideal para uma mulher de %.2f metros de altura é: %.2f kg\n", altura, peso_ideal);
+    } else {
+        printf("Sexo inexistente.\n");
+    }
+
+    return 0;
+}
+
+
+ 20-Faça um programa que receba a idade de um nadador e mostre sua categoria, usando as regras a seguir.
+Para idade inferior a 5, deverá mostrar mensagem.
+
+CATEgoriA idAdE
+Infantil 5 a 7
+Juvenil 8 a 10
+Adolescente 11 a 15
+Adulto 16 a 30
+Sênior Acima de 30
+
+
+
+ #include <stdio.h>
+
+int main() {
+    int idade;
+    
+
+    printf("Digite a idade do nadador: ");
+    scanf("%d", &idade);
+
+
+    if (idade < 5) {
+        printf("Não é possivel ser categorizado os nadadores com menos de 5 anos.\n");
+        
+    } else if (idade >= 5 && idade <= 7) {
+        printf("Categoria: Infantil\n");
+        
+    } else if (idade >= 8 && idade <= 10) {
+        printf("Categoria: Juvenil\n");
+        
+    } else if (idade >= 11 && idade <= 15) {
+        printf("Categoria: Adolescente\n");
+        
+    } else if (idade >= 16 && idade <= 30) {
+        printf("Categoria: Adulto\n");
+        
+    } else {
+        printf("Categoria: Sênior\n");
+    }
+
+    return 0;
+
+}
+
+
+ 21-Faça um programa que receba o preço de um produto e seu código de origem e mostre sua procedência.
+A procedência obedece à tabela a seguir.  
+Código dE origEM ProCEdêNCiA
+1 Sul
+2 Norte
+3 Leste
+4 Oeste
+5 ou 6 Nordeste
+7 ou 8 ou 9 Sudeste
+10 a 20 Centro-oeste
+21 a 30 Nordeste
+
+
+
+ #include <stdio.h>
+
+int main() {
+    int codigo_origem;
+    
+
+    printf("Digite o código de origem do produto: ");
+    scanf("%d", &codigo_origem);
+
+
+    if (codigo_origem == 1) {
+        printf("Procedência: Sul\n");
+        
+    } else if (codigo_origem == 2) {
+        printf("Procedência: Norte\n");
+        
+    } else if (codigo_origem == 3) {
+        printf("Procedência: Leste\n");
+        
+    } else if (codigo_origem == 4) {
+        printf("Procedência: Oeste\n");
+        
+    } else if (codigo_origem == 5 || codigo_origem == 6) {
+        printf("Procedência: Nordeste\n");
+        
+    } else if (codigo_origem == 7 || codigo_origem == 8 || codigo_origem == 9) {
+        printf("Procedência: Sudeste\n");
+        
+    } else if (codigo_origem >= 10 && codigo_origem <= 20) {
+        printf("Procedência: Centro-oeste\n");
+        
+    } else if (codigo_origem >= 21 && codigo_origem <= 30) {
+        printf("Procedência: Nordeste\n");
+        
+    } else {
+        printf("O Código de origem é inválido.\n");
+    }
+
+    return 0;
+}
+
+
+ 22- Faça um programa que receba a idade e o peso de uma pessoa. De acordo com a tabela a seguir, verifique
+e mostre em qual grupo de risco essa pessoa se encaixa.
+
+IDADE
+
+PESO
+
+Até 60 Entre 60 e 90 (inclusive) Acima de 90
+Menores que 20 9 8 7
+De 20 a 50 6 5 4
+Maiores que 50 3 2 1
+
+
+
+ #include <stdio.h>
+
+int main() {
+    int idade;
+    float peso;
+    
+
+    printf("Digite a idade da pessoa: ");
+    scanf("%d", &idade);
+
+
+    printf("Digite o peso da pessoa: ");
+    scanf("%f", &peso);
+
+
+    if (idade < 20) {
+        if (peso <= 60)
+            printf("Grupo de risco: 9\n");
+        else if (peso <= 90)
+            printf("Grupo de risco: 8\n");
+        else
+            printf("Grupo de risco: 7\n");
+    } else if (idade >= 20 && idade <= 50) {
+        if (peso <= 60)
+            printf("Grupo de risco: 6\n");
+            
+        else if (peso <= 90)
+            printf("Grupo de risco: 5\n");
+        else
+            printf("Grupo de risco: 4\n");
+            
+    } else {
+        if (peso <= 60)
+        
+            printf("Grupo de risco: 3\n");
+        else if (peso <= 90)
+        
+            printf("Grupo de risco: 2\n");
+        else
+            printf("Grupo de risco: 1\n");
+    }
+
+    return 0;
+}
+
+
+
+ 23- Faça um programa que receba:
+■■ o código do produto comprado; e
+■■ a quantidade comprada do produto.
+Calcule e mostre:
+■■ o preço unitário do produto comprado, seguindo a Tabela I;
+■■ o preço total da nota;
+■■ o valor do desconto, seguindo a Tabela II e aplicado sobre o preço total da nota; e
+■■ o preço final da nota depois do desconto.
+
+TABELA I
+Código PrEço
+1 a 10 R$ 10,00
+11 a 20 R$ 15,00
+21 a 30 R$ 20,00
+31 a 40 R$ 30,00
+
+TABELA II
+
+PrEço ToTAL dA NoTA % dE dEsCoNTo
+Até R$ 250,00 5%
+Entre R$ 250,00 e R$ 500,00 10%
+Acima de R$ 500,00 15%
+
+
+
+
+ #include <stdio.h>
+
+int main() {
+    int codigo_produto, quantidade;
+    float preco_unitario, preco_total, preco_final, desconto = 0.0;
+
+
+    printf("Digite o código do produto comprado: ");
+    scanf("%d", &codigo_produto);
+
+
+    printf("Digite a quantidade comprada do produto: ");
+    scanf("%d", &quantidade);
+
+
+    if (codigo_produto >= 1 && codigo_produto <= 10) {
+        preco_unitario = 10.00;
+    } else if (codigo_produto >= 11 && codigo_produto <= 20) {
+        preco_unitario = 15.00;
+    } else if (codigo_produto >= 21 && codigo_produto <= 30) {
+        preco_unitario = 20.00;
+    } else if (codigo_produto >= 31 && codigo_produto <= 40) {
+        preco_unitario = 30.00;
+    } else {
+        printf("Código do produto é inválido.\n");
+        return 1; 
+    }
+
+
+    preco_total = preco_unitario * quantidade;
+
+
+    if (preco_total <= 250.00) {
+        desconto = 0.05; // 5% de desconto
+    } else if (preco_total <= 500.00) {
+        desconto = 0.10; // 10% de desconto
+    } else {
+        desconto = 0.15; // 15% de desconto
+    }
+
+
+    preco_final = preco_total - (preco_total * desconto);
+
+
+    printf("Preço unitário do produto: R$%.2f\n", preco_unitario);
+    printf("Preço total da nota: R$%.2f\n", preco_total);
+    printf("Valor do desconto: R$%.2f\n", preco_total * desconto);
+    printf("Preço final da nota depois do desconto: R$%.2f\n", preco_final);
+
+    return 0;
+}
+
+
+
+ 24-Faça um programa que receba o preço, a categoria (1 — limpeza; 2 — alimentação; ou 3 — vestuário)
+
+e a situação (R — produtos que necessitam de refrigeração; e N — produtos que não necessitam de re-
+frigeração).
+
+Calcule e mostre:
+■■ O valor do aumento, usando as regras que se seguem.
+
+PrEço CATEgori A PErCENTuAL dE AuMENTo
+< = 25
+
+1 5%
+2 8%
+3 10%
+
+> 25
+
+1 12%
+2 15%
+3 18%
+
+■■ O valor do imposto, usando as regras a seguir.
+
+04 asc0711_CAP04 BR.indd 93 4/26/12 10:44 AM
+
+94 | Fundamentos da programação de computadores
+
+O produto que preencher pelo menos um dos seguintes requisitos pagará imposto equivalente a 5%
+do preço; caso contrário, pagará 8%. Os requisitos são:
+Categoria: 2
+Situação: R
+■■ O novo preço, ou seja, o preço mais aumento menos imposto.
+■■ A classificação, usando as regras a seguir.
+
+NoVo PrEço CLAssiFiCAção
+< = R$ 50,00 Barato
+Entre R$ 50,00 e R$ 120,00 Normal
+> = R$ 120,00 Caro
+
+
+
+ #include <stdio.h>
+
+int main() {
+    float preco, aumento, imposto, novo_preco;
+    int categoria;
+    char situacao;
+
+
+    printf("Digite o preço do produto: ");
+    scanf("%f", &preco);
+
+
+    printf("Digite a categoria do produto (1 — limpeza; 2 — alimentação; 3 — vestuário): ");
+    scanf("%d", &categoria);
+
+
+    printf("Digite a situação do produto (R — produtos que necessitam de refrigeração; N — produtos que não necessitam de refrigeração): ");
+    scanf(" %c", &situacao);
+
+
+    if (preco <= 25) {
+        if (categoria == 1)
+            aumento = 0.05;
+        else if (categoria == 2)
+            aumento = 0.08;
+        else if (categoria == 3)
+            aumento = 0.10;
+    } else {
+        if (categoria == 1)
+            aumento = 0.12;
+        else if (categoria == 2)
+            aumento = 0.15;
+        else if (categoria == 3)
+            aumento = 0.18;
+    }
+
+    if (categoria == 2 && situacao == 'R')
+        imposto = 0.05;
+    else
+        imposto = 0.08;
+
+
+    novo_preco = preco + (preco * aumento) - (preco * imposto);
+
+
+    printf("Valor do aumento: R$%.2f\n", preco * aumento);
+    printf("Valor do imposto: R$%.2f\n", preco * imposto);
+    printf("Novo preço: R$%.2f\n", novo_preco);
+
+
+    if (novo_preco <= 50.00)
+        printf("Classificação: Barato\n");
+    else if (novo_preco <= 120.00)
+        printf("Classificação: Normal\n");
+    else
+        printf("Classificação: Caro\n");
+
+    return 0;
+}
+
+
+ 25-Uma empresa decidiu dar uma gratificação de Natal a seus funcionários, baseada no número de horas
+
+extras e no número de horas que o funcionário faltou ao trabalho. O valor do prêmio é obtido pela con-
+sulta à tabela que se segue, na qual:
+
+H = número de horas extras – (2/3 * (número de horas falta))
+h (MiNuTos) PrêMio (r$)
+> = 2.400 500,00
+1.800 2.400 400,00
+1.200 1.800 300,00
+600 1.200 200,00
+< 600 100,00
+
+
+ #include <stdio.h>
+
+int main() {
+    int horas_extras, horas_falta;
+    float premio;
+
+
+    printf("Digite o número de horas extras trabalhadas: ");
+    scanf("%d", &horas_extras);
+
+
+    printf("Digite o número de horas que o funcionário faltou ao trabalho: ");
+    scanf("%d", &horas_falta);
+
+
+    int diferenca_horas = horas_extras - (2.0 / 3.0 * horas_falta);
+    if (diferenca_horas >= 2400)
+        premio = 500.00;
+    else if (diferenca_horas >= 1800)
+        premio = 400.00;
+    else if (diferenca_horas >= 1200)
+        premio = 300.00;
+    else if (diferenca_horas >= 600)
+        premio = 200.00;
+    else
+        premio = 100.00;
+
+
+    printf("O valor do prêmio de Natal que ele vai receber é: R$%.2f\n", premio);
+
+    return 0;
+}
