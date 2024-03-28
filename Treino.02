@@ -3,9 +3,8 @@ mensagem de aprovado ou reprovado, considerando para aprovação média 7
 
  #include <stdio.h>
 
-int main() {  
-           
-    float nota1, nota2, nota3, nota4, media;
+int main()  { 
+     float nota1, nota2, nota3, nota4, media;
      printf("Digite a primeira nota: ");
     scanf("%f", &nota1);
     printf("Digite a segunda nota: ");
